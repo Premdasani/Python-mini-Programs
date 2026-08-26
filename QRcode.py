@@ -25,6 +25,12 @@ def generate_qr_code(data, filename="qrcode.png", fill_color="black", back_color
 
     return img
 
-generate_qr_code("https://github.com/Premdasani", filename="example_qrcode.png", fill_color="blue", back_color="white")  
+
+input_data = input("QR code me kya encode karna hai (URL/Text): ")
 
 
+user_filename = input("Filename kya rakhna hai? (Default: my_qrcode.png): ").strip() or "my_qrcode.png"
+user_fill = input("QR code ka color kya chahiye? (Default: black): ").strip() or "black"
+user_back = input("Background color kya chahiye? (Default: white): ").strip() or "white"
+
+generate_qr_code(input_data, filename=user_filename, fill_color=user_fill, back_color=user_back)
